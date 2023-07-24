@@ -442,11 +442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Proyectos\\CursoComputacion\\BodegaDonPepe\\API\\API.csproj",
+      "projectUniqueName": "E:\\Proyectos\\CursoComputacion\\BackendDonPepe\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "F:\\Proyectos\\CursoComputacion\\BodegaDonPepe\\API\\API.csproj",
+      "projectPath": "E:\\Proyectos\\CursoComputacion\\BackendDonPepe\\API\\API.csproj",
       "packagesPath": "C:\\Users\\alfie\\.nuget\\packages\\",
-      "outputPath": "F:\\Proyectos\\CursoComputacion\\BodegaDonPepe\\API\\obj\\",
+      "outputPath": "E:\\Proyectos\\CursoComputacion\\BackendDonPepe\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alfie\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -457,7 +457,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -500,7 +500,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

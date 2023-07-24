@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TQK4KcYkuvRnOL+p76K1/E7ZAfbB7vh+Q6BetLmYP3YGBjV475p5B9f4/v+L8rA1N1YjomqQqXWvG6zcdW5jeg==",
+  "dgSpecHash": "Vxc7iToEv5ilzarHl0o7bmMpr1EwuDi+B5W7HkgrQxHsfEagtRCHTpbQxz6jA3d7xINTZwi8w04N/7RDj/DNvg==",
   "success": true,
-  "projectFilePath": "F:\\Proyectos\\CursoComputacion\\BodegaDonPepe\\SERVICE\\SERVICE.csproj",
+  "projectFilePath": "E:\\Proyectos\\CursoComputacion\\BackendDonPepe\\SERVICE\\SERVICE.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
