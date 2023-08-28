@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\CEN\CEN.csproj" />
+    <ProjectReference Include="..\CLN\CLN.csproj" />
   </ItemGroup>
 
 </Project>

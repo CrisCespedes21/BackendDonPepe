@@ -1,4 +1,7 @@
-﻿namespace API
+﻿using CEN.HELPERS;
+using Microsoft.OpenApi.Models;
+
+namespace API
 {
     public class Startup
     {
@@ -13,6 +16,10 @@
             services.AddOptions(); 
             services.AddSingleton<IConfiguration>(this.Configuration);
             services.AddControllers();
+            services.AddSwaggerGen(c => 
+            {
+                c.SwaggerDoc("V1", new OpenApiInfo { Title = "Bodega Don Pepe", Version = "V1"});
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) 
@@ -21,7 +28,7 @@
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "APIService v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/V1/swagger.json", "Bodega Don Pepe V1"));
             }
 
             app.UseHttpsRedirection();
@@ -42,6 +49,13 @@
                 .AddJsonFile($"appsettings.Development.json")
                 .AddEnvironmentVariables()
                 .Build();
+
+            Constants.Server_name = this.Configuration.GetValue<String>("SQL:Server_name");
+            Constants.Database_name = this.Configuration.GetValue<String>("SQL:Database_name");
+            Constants.User_name = this.Configuration.GetValue<String>("SQL:User_name");
+            Constants.User_pass = this.Configuration.GetValue<String>("SQL:User_pass");
+            Constants.Cadena_conexion = $"data source = {Constants.Server_name}; initial catalog = {Constants.Database_name}; " +
+                            $"user id = {Constants.User_name}; password = {Constants.User_pass}; TrustServerCertificate=True";
         }
     }
 }

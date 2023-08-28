@@ -8,7 +8,6 @@ namespace CEN.CATEGORIA
 {
     public class InsertCategoriaCEN
     {
-        public int idCategoria { get; set; }
         public string codigo  { get; set; }
         public string nombre { get; set; }
     }
