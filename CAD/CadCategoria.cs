@@ -130,5 +130,71 @@ namespace CAD
                 _sqlConexion.Close();
             }
         }
+        private CenControlError EliminarCategoria(DeleteCategoriaCEN request)
+    {
+        CenControlError response = new CenControlError();
+        SqlConnection _sqlConexion = new SqlConnection(Constants.Cadena_conexion);
+        SqlCommand cmd;
+        try
+        {
+            _sqlConexion.Open();
+            cmd = new SqlCommand("sp_IUDCategoria", _sqlConexion);
+            cmd.Parameters.AddWithValue("@pId", request.idCategoria);
+            cmd.Parameters.AddWithValue("@pAccion", "D");
+            cmd.CommandType = CommandType.StoredProcedure;
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    response.Tipo = "D";
+                    response.Codigo = reader["CODIGO"].ToString();
+                    response.Mensaje = reader["MENSAJE"].ToString();
+                }
+            }
+            return response;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            _sqlConexion.Close();
+        }
+    }
+    private CenControlError EditarCategoria(UpdateCategoriaCEN request)
+{
+    CenControlError response = new CenControlError();
+    SqlConnection _sqlConexion = new SqlConnection(Constants.Cadena_conexion);
+    SqlCommand cmd;
+    try
+    {
+        _sqlConexion.Open();
+        cmd = new SqlCommand("sp_IUDCategoria", _sqlConexion);
+        cmd.Parameters.AddWithValue("@pId", request.idCategoria);
+        cmd.Parameters.AddWithValue("@pCodigo", ""); 
+        cmd.Parameters.AddWithValue("@pNombre", request.nombre); 
+        cmd.Parameters.AddWithValue("@pAccion", "U");
+        cmd.CommandType = CommandType.StoredProcedure;
+        using (var reader = cmd.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                response.Tipo = "U"; // Indica que se realizó una actualización
+                response.Codigo = reader["CODIGO"].ToString();
+                response.Mensaje = reader["MENSAJE"].ToString();
+            }
+        }
+        return response;
+    }
+    catch (Exception ex)
+    {
+        throw ex;
+    }
+    finally
+    {
+        _sqlConexion.Close();
+    }
+}
     }
 }

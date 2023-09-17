@@ -23,5 +23,15 @@ namespace CLN
             CadCategoria cad = new();
             return cad.AgregarCategoria(request);
         }
+        public CenControlError EliminarCategoria(DeleteCategoriaCEN request)
+        {
+            CadCategoria cad = new();
+            return cad.EliminarCategoria(request);
+        }
+        public CenControlError EditarCategoria(UpdateCategoria request)
+        {
+            CadCategoria cad = new();
+            return cad.EditarCategoria(request);
+        }
     }
 }

@@ -51,5 +51,25 @@ namespace API.Controllers
                 return BadRequest(error);
             }
         }
+        [HttpPost("eliminarCategoria")]
+        public IActionResult EliminarCategorias([FromBody] DeleteCategoriaCEN Crequest)
+        {
+            try
+            {
+                ClnCategoria cln = new();
+                var request = cln.EliminarCategoria(Crequest);
+                return Ok(request);
+            }
+            catch (Exception ex)
+            {
+                CenControlError error = new()
+                {
+                    Tipo = "R",
+                    Codigo = "EX",
+                    Mensaje = ex.Message
+                };
+                return BadRequest(error);
+            }
+        }
     }
 }
